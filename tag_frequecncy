@@ -1,0 +1,26 @@
+all_tags = [tag for _, tag in tagged_words] 
+tag_counts = Counter(all_tags) 
+print("\n=== (c)TAG FREQUENCY===") 
+print("Tags sorted by decreasing frequency:\n") 
+for tag, freq in tag_counts.most_common(): 
+print(f"{tag:5} -> {freq}") 
+print("\ncommon tags:") 
+tag_meanings = { 
+"NOUN": "Noun (Person, place,thing,idea)", 
+"VERB": "Verb(action or state)", 
+"ADJ":"Adjective (describes a noun)", 
+"ADV":"Adverb(describe a verb/adjective)", 
+"DET":"Determiner (the,a,this,that)", 
+"PRON":"Pronoun(he,she,they)", 
+"ADP":"Adposition (in,on,at,with)", 
+"CONJ":"Conjuction (and, or, but)", 
+"NUM":"Number (one,two , 100)", 
+"PRT":"Particle (up, off, to)", 
+".":"Punctuation or sentence boundry", 
+"X":"Other (Foreign words, typos)" 
+} 
+for tag in list(tag_counts.keys()): 
+if tag in tag_meanings: 
+print(f"{tag:5} -> {tag_meanings[tag]}") 
+tagged_bigrams = list(bigrams(tagged_words)) 
+after_noun = Counter(tag for(w1,t1),(w2,t2) in tagged_bigrams if t1 == 'NOUN')
