@@ -1,0 +1,7 @@
+print("\n=== (d)TAGS AFTER NOUNS===") 
+for tag, freq in after_noun.most_common(): 
+print(f"{tag:5} -> {freq}") 
+print("- VERB after NOUN: subject-verb relation (e.g., 'AI holds').") 
+print("- ADP after NOUN: preposition (e.g., 'world in').") 
+print("- DET after NOUN: determiner for another noun(e.g., 'world the').") 
+print("- Another after NOUN: compound nouns (e.g., 'AI Systems').")
