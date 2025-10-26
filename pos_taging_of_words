@@ -1,0 +1,20 @@
+import nltk 
+from collections import defaultdict, Counter 
+from nltk.util import bigrams 
+nltk.download('punkt_tab') 
+nltk.download('averaged_perceptron_tagger') 
+nltk.download('universal_tagset') # Download the universal tagset 
+nltk.download('averaged_perceptron_tagger_eng') 
+#step-1 
+text = """Artificial Intelligence is transforming the world rapidly, 
+It is used in healthcare,education,business and entertainment, 
+Machines are learning to understand human language and make predictions, 
+The futyre of AI holds enormous potential but also challenges.""" 
+print("=== INPUT PARAGRAPH ===\n") 
+print(text) 
+#step-2 
+words = nltk.word_tokenize(text) 
+tagged_words = nltk.pos_tag(words, tagset = "universal") 
+print("\n===(a) POS Tagging ===\n") 
+print("Each word is assigned a grammatical tag:\n") 
+print(tagged_words) 
