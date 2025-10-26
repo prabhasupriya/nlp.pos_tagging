@@ -1,0 +1,9 @@
+ 
+word_tags = defaultdict(set) 
+for word, tag in tagged_words: 
+word_tags[word.lower()].add(tag) 
+word_with_most_tags = max(word_tags.items(), key = lambda x: len(x[1])) 
+print("\n==== (b) WORD WITH MOST DISTINCT TAGS =====") 
+print(f"Word: '{word_with_most_tags[0]}'") 
+print(f"Tags: {word_with_most_tags[1]}") 
+print("This word is used in different grammatical roles.") 
